@@ -1,0 +1,13 @@
+{
+  "name": "bangladesh-wheat-shahbani",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "@google/genai": "latest",
+    "@netlify/functions": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

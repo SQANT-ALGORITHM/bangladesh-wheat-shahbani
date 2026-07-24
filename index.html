@@ -203,6 +203,7 @@
       <button type="button" class="nav-btn" data-target="ch8">08 · Risk Assessment</button>
       <button type="button" class="nav-btn" data-target="ch9">09 · Pipeline & Outlook</button>
       <button type="button" class="nav-btn" data-target="ch10">10 · Appendix</button>
+      <button type="button" class="nav-btn" data-target="ch11">11 · AI Assistant</button>
     </div>
   </div>
 </div>
@@ -648,6 +649,27 @@
   </div>
 </section>
 
+<!-- CHAPTER 11 -->
+<section class="chapter-section" id="ch11">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 11</div>
+    <h2 class="chapter-title">AI Intelligence Assistant (Gemini 2.5 Pro)</h2>
+    <p class="chapter-desc">Interactive grain market analysis and query interface powered by Google Gemini 2.5 Pro via Netlify AI Gateway.</p>
+  </div>
+
+  <div class="card" style="margin-bottom: 24px;">
+    <div class="card-title">Ask Gemini Intelligence</div>
+    <div class="card-text" style="margin-bottom: 16px;">Query the AI assistant regarding tender mechanics, price benchmarks, or strategic entry options.</div>
+    
+    <div style="display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
+      <input type="text" id="aiPromptInput" placeholder="Ask Gemini 2.5 Pro a question..." style="flex: 1; min-width: 250px; padding: 12px 16px; background: var(--black-soft); border: 1px solid var(--border-gold); border-radius: 8px; color: var(--text-primary); font-family: inherit; font-size: 14px;">
+      <button type="button" id="aiSubmitBtn" style="padding: 12px 24px; background: var(--gradient-gold); border: none; border-radius: 8px; color: var(--black); font-weight: 700; cursor: pointer; font-size: 14px; transition: opacity 0.2s;">Query AI</button>
+    </div>
+
+    <div id="aiResponseContainer" style="background: var(--black-soft); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; font-size: 14px; line-height: 1.6; color: var(--text-secondary); min-height: 80px; white-space: pre-wrap;">Response from Gemini 2.5 Pro will appear here...</div>
+  </div>
+</section>
+
 <div class="report-footer">
   <div class="logo-text">SHAHBANI HOLDINGS</div>
   <p>This report is compiled from publicly issued Directorate General of Food tender notices and internal dossier materials for strategic planning purposes only.<br>It does not constitute a bid, offer, or binding commercial commitment.</p>
@@ -707,6 +729,39 @@
 
       sections.forEach(function (sec) {
         if (sec) observer.observe(sec);
+      });
+    }
+
+    var submitBtn = document.getElementById('aiSubmitBtn');
+    var promptInput = document.getElementById('aiPromptInput');
+    var responseBox = document.getElementById('aiResponseContainer');
+
+    if (submitBtn && promptInput && responseBox) {
+      submitBtn.addEventListener('click', async function () {
+        var userText = promptInput.value.trim() || 'Hello!';
+        responseBox.textContent = 'Querying Gemini 2.5 Pro via Netlify AI Gateway...';
+        submitBtn.disabled = true;
+
+        try {
+          var res = await fetch('/api/gemini', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: userText })
+          });
+          var data = await res.json();
+          if (data.error) {
+            responseBox.textContent = 'Error: ' + data.error;
+          } else if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
+            var parts = data.candidates[0].content.parts.map(function (p) { return p.text || ''; }).join('\n');
+            responseBox.textContent = parts || JSON.stringify(data, null, 2);
+          } else {
+            responseBox.textContent = JSON.stringify(data, null, 2);
+          }
+        } catch (err) {
+          responseBox.textContent = 'Network or Request Error: ' + err.message;
+        } finally {
+          submitBtn.disabled = false;
+        }
       });
     }
   })();
