@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shahbani Holdings | Bangladesh Wheat Tender Intelligence Report - Package-03</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4AF37; --gold-light: #F0E68C; --gold-dark: #B8860B;
+    --black: #0A0A0A; --black-soft: #111111; --black-elevated: #1A1A1A;
+    --charcoal: #2A2A2A; --text-primary: #F5F5F5; --text-secondary: #A0A0A0;
+    --text-muted: #666666; --border-subtle: rgba(212,175,55,0.15);
+    --border-gold: rgba(212,175,55,0.4);
+    --gradient-gold: linear-gradient(135deg,#D4AF37 0%,#F0E68C 50%,#B8860B 100%);
+    --shadow-gold: 0 0 30px rgba(212,175,55,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--black);color:var(--text-primary);min-height:100vh;overflow-x:hidden;line-height:1.6}
+
+  .cover-slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 40px;background:radial-gradient(ellipse at 20% 50%,rgba(212,175,55,0.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(212,175,55,0.05) 0%,transparent 50%),var(--black);position:relative}
+  .cover-slide::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:0.5;pointer-events:none}
+  .cover-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border-gold);padding:8px 20px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:40px;background:rgba(212,175,55,0.05)}
+  .cover-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+  .cover-logo-text{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;letter-spacing:8px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .cover-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,64px);font-weight:700;line-height:1.1;margin-bottom:16px;background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .cover-subtitle{font-size:clamp(16px,2vw,22px);font-weight:300;color:var(--text-secondary);max-width:700px;line-height:1.6;margin-bottom:48px}
+  .cover-divider{width:60px;height:1px;background:var(--gradient-gold);margin:0 auto 32px}
+  .cover-meta{display:flex;gap:40px;flex-wrap:wrap;justify-content:center;margin-bottom:48px}
+  .cover-meta-item{text-align:center}
+  .cover-meta-item .label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+  .cover-meta-item .value{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold)}
+  .cover-footer{font-size:12px;color:var(--text-muted);letter-spacing:1px}
+  .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-muted);font-size:11px;letter-spacing:2px;text-transform:uppercase;animation:bounce 2s infinite}
+  .scroll-hint .arrow{width:1px;height:30px;background:linear-gradient(to bottom,var(--gold),transparent)}
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+  .nav-bar{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle)}
+  .nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+  .nav-brand{font-family:'Playfair Display',serif;font-size:14px;color:var(--gold);letter-spacing:2px;text-decoration:none}
+  .nav-chapters{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .nav-chapters::-webkit-scrollbar{display:none}
+  .nav-btn{background:none;border:none;color:var(--text-muted);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:8px 14px;cursor:pointer;border-radius:6px;transition:all 0.3s ease;white-space:nowrap;position:relative;text-decoration:none}
+  .nav-btn:hover{color:var(--gold);background:rgba(212,175,55,0.08)}
+  .nav-btn.active{color:var(--gold);background:rgba(212,175,55,0.12)}
+  .nav-btn.active::after{content:'';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:20px;height:2px;background:var(--gold);border-radius:1px}
+
+  .chapter-section{max-width:1200px;margin:0 auto;padding:80px 40px}
+  .chapter-header{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border-subtle)}
+  .chapter-number{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .chapter-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.2;margin-bottom:16px}
+  .chapter-desc{font-size:16px;color:var(--text-secondary);line-height:1.7;max-width:800px}
+
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:40px}
+  .card{background:var(--black-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:28px;transition:all 0.3s ease;position:relative;overflow:hidden}
+  .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gradient-gold);opacity:0;transition:opacity 0.3s ease}
+  .card:hover{border-color:var(--border-gold);transform:translateY(-2px);box-shadow:var(--shadow-gold)}
+  .card:hover::before{opacity:1}
+  .card-icon{width:44px;height:44px;border-radius:10px;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px}
+  .card-title{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--text-primary)}
+  .card-text{font-size:14px;color:var(--text-secondary);line-height:1.6}
+  .card-metric{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);margin-bottom:4px}
+  .card-metric-label{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+
+  .data-table-wrapper{background:var(--black-elevated);border:1px solid var(--border-subtle);border-radius:12px;overflow:hidden;margin-bottom:40px}
+  .data-table{width:100%;border-collapse:collapse;font-size:14px}
+  .data-table thead{background:rgba(212,175,55,0.08)}
+  .data-table th{padding:16px 20px;text-align:left;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border-subtle)}
+  .data-table td{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--text-secondary)}
+  .data-table tr:hover td{background:rgba(212,175,55,0.03);color:var(--text-primary)}
+  .data-table tr:last-child td{border-bottom:none}
+  .table-caption{padding:16px 20px;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border-subtle);background:rgba(0,0,0,0.3)}
+
+  .progress-item{margin-bottom:20px}
+  .progress-header{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}
+  .progress-header .label{color:var(--text-secondary)}
+  .progress-header .value{color:var(--gold);font-weight:600}
+  .progress-bar{height:6px;background:var(--charcoal);border-radius:3px;overflow:hidden}
+  .progress-fill{height:100%;border-radius:3px;background:var(--gradient-gold)}
+
+  .timeline{position:relative;padding-left:30px}
+  .timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),transparent)}
+  .timeline-item{position:relative;padding-bottom:32px}
+  .timeline-item::before{content:'';position:absolute;left:-28px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--black);border:2px solid var(--gold)}
+  .timeline-date{font-size:12px;color:var(--gold);font-weight:600;margin-bottom:4px}
+  .timeline-title{font-size:15px;font-weight:600;margin-bottom:6px}
+  .timeline-desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+  .rec-card{background:var(--black-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:28px;margin-bottom:16px;display:flex;gap:20px;align-items:flex-start;transition:all 0.3s ease}
+  .rec-card:hover{border-color:var(--border-gold)}
+  .rec-number{width:40px;height:40px;border-radius:50%;background:rgba(212,175,55,0.1);border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--gold);flex-shrink:0}
+  .rec-content h4{font-size:16px;font-weight:600;margin-bottom:8px}
+  .rec-content p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+  .rec-priority{display:inline-block;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:12px}
+  .priority-high{background:rgba(220,38,38,0.15);color:#EF4444;border:1px solid rgba(220,38,38,0.3)}
+  .priority-medium{background:rgba(212,175,55,0.15);color:var(--gold);border:1px solid rgba(212,175,55,0.3)}
+  .priority-low{background:rgba(34,197,94,0.15);color:#22C55E;border:1px solid rgba(34,197,94,0.3)}
+
+  .section-divider{display:flex;align-items:center;gap:16px;margin:48px 0}
+  .section-divider .line{flex:1;height:1px;background:var(--border-subtle)}
+  .section-divider .diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+
+  .exec-summary{background:linear-gradient(135deg,rgba(212,175,55,0.08) 0%,rgba(212,175,55,0.02) 100%);border:1px solid var(--border-gold);border-radius:16px;padding:32px;margin-bottom:40px}
+  .exec-summary h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin-bottom:16px}
+  .exec-summary p{font-size:15px;color:var(--text-secondary);line-height:1.8}
+
+  .map-container{background:var(--black-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:40px;text-align:center;margin-bottom:40px;position:relative;overflow:hidden}
+  .map-container::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 30% 40%,rgba(212,175,55,0.06) 0%,transparent 40%),radial-gradient(circle at 70% 60%,rgba(212,175,55,0.04) 0%,transparent 40%)}
+  .map-title{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:24px;position:relative;z-index:1}
+  .supply-chain-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
+  .flow-node{background:var(--black-soft);border:1px solid var(--border-gold);border-radius:10px;padding:16px 24px;text-align:center;min-width:140px}
+  .flow-node .node-icon{font-size:24px;margin-bottom:8px}
+  .flow-node .node-label{font-size:13px;font-weight:600}
+  .flow-node .node-sub{font-size:11px;color:var(--text-muted);margin-top:4px}
+  .flow-arrow{color:var(--gold);font-size:20px;font-weight:bold}
+
+  .risk-matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px}
+  .risk-cell{background:var(--black-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:24px}
+  .risk-cell .risk-level{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+  .risk-high .risk-level{color:#EF4444}
+  .risk-medium .risk-level{color:var(--gold)}
+  .risk-low .risk-level{color:#22C55E}
+  .risk-cell ul{list-style:none;padding:0}
+  .risk-cell li{font-size:14px;color:var(--text-secondary);padding:6px 0;padding-left:16px;position:relative}
+  .risk-cell li::before{content:'*';position:absolute;left:0;color:var(--gold)}
+
+  .swot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px}
+  .swot-card{background:var(--black-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:24px}
+  .swot-card h4{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .swot-s h4{color:#22C55E}
+  .swot-w h4{color:#EF4444}
+  .swot-o h4{color:var(--gold)}
+  .swot-t h4{color:#F97316}
+  .swot-card ul{list-style:none;padding:0}
+  .swot-card li{font-size:14px;color:var(--text-secondary);padding:8px 0;padding-left:20px;position:relative;line-height:1.5;border-bottom:1px solid rgba(255,255,255,0.03)}
+  .swot-card li:last-child{border-bottom:none}
+  .swot-card li::before{content:'>';position:absolute;left:0;font-weight:bold}
+  .swot-s li::before{color:#22C55E}
+  .swot-w li::before{color:#EF4444}
+  .swot-o li::before{color:var(--gold)}
+  .swot-t li::before{color:#F97316}
+
+  .file-row{display:flex;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.03);transition:background 0.2s ease}
+  .file-row:hover{background:rgba(212,175,55,0.03)}
+  .file-row:last-child{border-bottom:none}
+  .file-icon{width:40px;height:40px;border-radius:8px;background:rgba(212,175,55,0.08);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+  .file-info{flex:1}
+  .file-name{font-size:14px;font-weight:500;margin-bottom:2px}
+  .file-meta{font-size:12px;color:var(--text-muted)}
+  .file-status{padding:4px 12px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:0.5px}
+  .status-ready{background:rgba(34,197,94,0.15);color:#22C55E}
+  .status-pending{background:rgba(212,175,55,0.15);color:var(--gold)}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+
+  .report-footer{text-align:center;padding:60px 40px;border-top:1px solid var(--border-subtle);background:var(--black-soft)}
+  .report-footer .logo-text{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);letter-spacing:4px;margin-bottom:12px}
+  .report-footer p{font-size:12px;color:var(--text-muted);line-height:1.8}
+  .report-footer .confidential{display:inline-block;margin-top:20px;padding:8px 20px;border:1px solid var(--border-gold);border-radius:100px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+
+  @media(max-width:768px){
+    .chapter-section{padding:40px 20px}
+    .nav-inner{padding:12px 16px}
+    .cover-meta{gap:20px}
+    .rec-card{flex-direction:column}
+    .supply-chain-flow{flex-direction:column}
+    .flow-arrow{transform:rotate(90deg)}
+    .two-col,.swot-grid,.risk-matrix{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover-slide">
+  <div class="cover-badge"><span class="dot"></span> Confidential Intelligence Dossier</div>
+  <div class="cover-logo-text">Shahbani Holdings</div>
+  <h1 class="cover-title">Bangladesh Wheat Tender<br>Intelligence Report</h1>
+  <p class="cover-subtitle">Directorate General of Food (DGF) Package-03, FY 2025-26 — Award Analysis, Agrocorp Market Positioning, and Strategic Entry Pathways for Global Grain Traders</p>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><div class="label">Tender Reference</div><div class="value">Package-03 / FY 2025-26</div></div>
+    <div class="cover-meta-item"><div class="label">Volume</div><div class="value">50,000 MT (±5%)</div></div>
+    <div class="cover-meta-item"><div class="label">Award Value</div><div class="value">US$15.1M</div></div>
+    <div class="cover-meta-item"><div class="label">Prepared</div><div class="value">July 2026</div></div>
+  </div>
+  <div class="cover-footer">Prepared for internal strategic use — Milling Wheat Import Program, Ministry of Food, Government of Bangladesh</div>
+  <div class="scroll-hint"><div class="arrow"></div>Scroll to Begin</div>
+</div>
+
+<div class="nav-bar">
+  <div class="nav-inner">
+    <button type="button" class="nav-brand" id="navBrand" style="background:none;border:none;cursor:pointer">SHAHBANI HOLDINGS</button>
+    <div class="nav-chapters">
+      <button type="button" class="nav-btn" data-target="ch1">01 · Executive Summary</button>
+      <button type="button" class="nav-btn" data-target="ch2">02 · Tender Overview</button>
+      <button type="button" class="nav-btn" data-target="ch3">03 · Award Analysis</button>
+      <button type="button" class="nav-btn" data-target="ch4">04 · Agrocorp Intelligence</button>
+      <button type="button" class="nav-btn" data-target="ch5">05 · Quality & Compliance</button>
+      <button type="button" class="nav-btn" data-target="ch6">06 · Logistics & Terms</button>
+      <button type="button" class="nav-btn" data-target="ch7">07 · Entry Strategy</button>
+      <button type="button" class="nav-btn" data-target="ch8">08 · Risk Assessment</button>
+      <button type="button" class="nav-btn" data-target="ch9">09 · Pipeline & Outlook</button>
+      <button type="button" class="nav-btn" data-target="ch10">10 · Appendix</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER 1 -->
+<section class="chapter-section" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 01</div>
+    <h2 class="chapter-title">Executive Summary</h2>
+    <p class="chapter-desc">A consolidated read of the DGF Package-03 milling wheat tender, its award outcome, and what it signals for global exporters seeking access to Bangladesh's public grain procurement channel.</p>
+  </div>
+
+  <div class="exec-summary">
+    <h3>Key Finding</h3>
+    <p>Bangladesh's Directorate General of Food (DGF) awarded Package-03 (50,000 MT ±5% milling wheat, FY2025-26) to <strong>Agrocorp International Pte Ltd (Singapore)</strong> at <strong>US$297.92/MT CIF Liner Out</strong> (Chattogram 60% / Mongla 40%), confirming a persistent pattern: Agrocorp holds a dominant, near-gatekeeper position in Bangladesh's government wheat channel, combining open-tender wins with G2G supply via its US Wheat Associates relationship. For global traders sourcing from origin millers, the most capital-efficient entry point is not direct tender participation but back-to-back supply into Agrocorp's award pipeline, run in parallel with direct outreach to Bangladesh's large private millers.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">📄</div>
+      <div class="card-metric">50,000</div>
+      <div class="card-metric-label">MT (±5%) Milling Wheat — Package-03</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <div class="card-metric">$297.92</div>
+      <div class="card-metric-label">Awarded Price per MT, CIF Liner Out</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏆</div>
+      <div class="card-metric">Agrocorp</div>
+      <div class="card-metric-label">Winning Bidder (Singapore)</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📦</div>
+      <div class="card-metric">270,000</div>
+      <div class="card-metric-label">MT Total Wheat Approved Same CCGP Meeting</div>
+    </div>
+  </div>
+
+  <div class="section-divider"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">What Closed</div>
+      <div class="card-text">Package-03 tender opened 24 June 2026, awarded 1 July 2026. Contract signing, Performance Guarantee submission, and L/C opening were underway as of late July 2026, with a 25-day shipment window from L/C opening.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">What's Still Open</div>
+      <div class="card-text">No confirmed Package-04 as of this writing. DGF issues tenders continuously based on stock levels, price signals, and FX — not on a fixed calendar. Direct follow-up with the Procurement Division is the recommended monitoring channel.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="chapter-section" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 02</div>
+    <h2 class="chapter-title">Tender Overview — Package-03</h2>
+    <p class="chapter-desc">Official notice details as published by the Directorate General of Food, Ministry of Food, Government of the People's Republic of Bangladesh.</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table class="data-table">
+      <thead><tr><th>Field</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Notice Reference</td><td>13.01.0000.093.46.018.26-361, dated 09/06/2026</td></tr>
+        <tr><td>Procuring Entity</td><td>Director, Procurement — Directorate General of Food</td></tr>
+        <tr><td>Procuring Method</td><td>International Open Tender</td></tr>
+        <tr><td>Funding Source</td><td>Government of Bangladesh (GoB)</td></tr>
+        <tr><td>Package</td><td>Package-03, FY 2025-26</td></tr>
+        <tr><td>Volume</td><td>50,000 MT (±5%) Milling Wheat</td></tr>
+        <tr><td>Delivery Terms</td><td>CIF Liner Out — Chattogram (60%) / Mongla (40%)</td></tr>
+        <tr><td>Notice Publication</td><td>10/06/2026</td></tr>
+        <tr><td>Document Sale Window</td><td>10/06/2026 – 23/06/2026, 3:30 PM BST</td></tr>
+        <tr><td>Closing Date/Time</td><td>24/06/2026, up to 1:00 PM BST</td></tr>
+        <tr><td>Opening Date/Time</td><td>24/06/2026, 2:00 PM BST</td></tr>
+        <tr><td>Tender Document Price</td><td>Tk 5,000 or USD 100 (non-refundable), via Pay Order/Bank Draft to Director General, DGF</td></tr>
+        <tr><td>Payment Mode</td><td>Letter of Credit (L/C)</td></tr>
+        <tr><td>Crop Year</td><td>2026 or latest</td></tr>
+        <tr><td>Tender Validity</td><td>Up to BST 16:00, 08/07/2026</td></tr>
+        <tr><td>Eligible Origin</td><td>Any country in the world except Israel</td></tr>
+        <tr><td>Tender Security</td><td>US$300,000 — Bank Draft / Pay Order only (no Bank Guarantee accepted)</td></tr>
+        <tr><td>Shipment Period</td><td>25 days from date of opening of the L/C</td></tr>
+        <tr><td>Contact (Procurement Director)</td><td>Md. Moniruzzaman — dproc@dgfood.gov.bd — +88-02-41050178</td></tr>
+      </tbody>
+    </table>
+    <div class="table-caption">Source: DGF International Tender Notice, Package-03, FY 2025-2026 — Ref. No. 13.01.0000.093.46.018.26-361</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Blacklist & Eligibility Rules (Tender Clause 30)</div>
+    <div class="card-text">
+      Incomplete, conditional, or alternate offers are not considered. In addition, a tenderer is ineligible to bid if: (i) it holds an unshipped award still awaiting contract or shipment sail date; (ii) it previously won an award but failed to submit the Performance Guarantee on time; (iii) its bid-bond was forfeited twice in the current financial year for non-submission of PG or non-signing of contract; or (iv) its full PG was forfeited for non-supply — in both (iii) and (iv), ineligibility extends for the rest of the financial year regardless of whether forfeited funds were deposited to Treasury. Execution discipline is not optional — it directly gates future tender access.
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="chapter-section" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 03</div>
+    <h2 class="chapter-title">Award Analysis</h2>
+    <p class="chapter-desc">Outcome, valuation, and execution status of Package-03 as of late July 2026.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">Award Date</div>
+      <div class="card-text">1 July 2026</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Awarded Price</div>
+      <div class="card-text">US$297.92/MT, CIF Liner Out</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Total Contract Value</div>
+      <div class="card-text">~Tk 182.84 crore (~US$15.1 million)</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Winning Bidder</div>
+      <div class="card-text">Agrocorp International Pte Ltd, Singapore</div>
+    </div>
+  </div>
+
+  <div class="section-divider"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+
+  <div class="map-container">
+    <div class="map-title">Post-Award Execution Timeline (Typical Path)</div>
+    <div class="supply-chain-flow">
+      <div class="flow-node"><div class="node-icon">🖊️</div><div class="node-label">Contract Signing</div><div class="node-sub">Days 1–10 post-award</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="node-icon">🛡️</div><div class="node-label">Performance Guarantee</div><div class="node-sub">Concurrent / follow-on</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="node-icon">🏦</div><div class="node-label">L/C Opening</div><div class="node-sub">14–30 days post-award</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node"><div class="node-icon">🚢</div><div class="node-label">Shipment</div><div class="node-sub">25-day window from L/C</div></div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">9 June 2026</div>
+      <div class="timeline-title">Tender Notice Published</div>
+      <div class="timeline-desc">International Open Tender issued by DGF Procurement Division for 50,000 MT (±5%) Milling Wheat.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">24 June 2026</div>
+      <div class="timeline-title">Tender Closed & Opened</div>
+      <div class="timeline-desc">Sealed bids closed 1:00 PM BST; opened same day at 2:00 PM BST.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">1 July 2026</div>
+      <div class="timeline-title">Award to Agrocorp</div>
+      <div class="timeline-desc">US$297.92/MT CIF, part of a broader ~270,000 MT wheat approval bundle at the same CCGP meeting (including G2G elements).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Late July 2026 (estimated)</div>
+      <div class="timeline-title">Execution In Progress</div>
+      <div class="timeline-desc">Contract likely signed, Performance Guarantee submitted, and L/C opening/shipping preparation advanced, based on standard 14–30 day post-award timelines.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="chapter-section" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 04</div>
+    <h2 class="chapter-title">Agrocorp Market Positioning</h2>
+    <p class="chapter-desc">Why Agrocorp functions as the practical gatekeeper of Bangladesh's government wheat channel — and what that means for upstream suppliers.</p>
+  </div>
+
+  <div class="swot-grid">
+    <div class="swot-card swot-s">
+      <h4>✓ Strengths</h4>
+      <ul>
+        <li>Repeated award history in DGF open tenders</li>
+        <li>Established G2G channel via US Wheat Associates MOU</li>
+        <li>Working capital and LC structuring (95/5 split) already in place</li>
+        <li>Demonstrated execution track record with DGF, reducing blacklist risk</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-w">
+      <h4>✗ Structural Dependencies</h4>
+      <ul>
+        <li>Physical grain must still be sourced upstream from origin millers</li>
+        <li>Landed cost benchmark (~$298–$322/MT) sets a ceiling competitors can undercut</li>
+        <li>Reliant on timely origin sourcing to meet 25-day shipment windows</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-o">
+      <h4>◆ Opportunity for Upstream Suppliers</h4>
+      <ul>
+        <li>Back-to-back FOB supply to Agrocorp's origination desk (Singapore/Canada/Australia-focused)</li>
+        <li>Trial cargo entry point: 25,000–50,000 MT to prove execution</li>
+        <li>No need for Bangladesh IRC/importer registration to participate indirectly</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-t">
+      <h4>⚠ Watch Items</h4>
+      <ul>
+        <li>Agrocorp's incumbency advantage makes direct-tender competition difficult for new entrants</li>
+        <li>Relationship-based allocation favors proven, existing suppliers to Agrocorp</li>
+        <li>Government award cadence is irregular, not calendar-based</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="chapter-section" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 05</div>
+    <h2 class="chapter-title">Quality Specification & Compliance</h2>
+    <p class="chapter-desc">Binding quality parameters for any offer against DGF milling wheat tenders — rejection thresholds are strict and non-negotiable.</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <table class="data-table">
+      <thead><tr><th>Quality Parameter</th><th>Specification</th><th>Rejection Threshold</th></tr></thead>
+      <tbody>
+        <tr><td>Test Weight (minimum)</td><td>76 kg/hl</td><td>Below 76 kg/hl</td></tr>
+        <tr><td>Damaged Kernels (maximum)</td><td>3%</td><td>Above 3%</td></tr>
+        <tr><td>Foreign Material (maximum)</td><td>0.7%</td><td>Above 0.7%</td></tr>
+        <tr><td>Shrunken & Broken Kernels (maximum)</td><td>4%</td><td>Above 4% (incl. max 2% contrasting classes)</td></tr>
+        <tr><td>Wheat of Other Classes</td><td>4% (incl. max 2% contrasting classes)</td><td>Above 4% (incl. max 2% contrasting classes)</td></tr>
+        <tr><td>Protein Content (minimum, dry matter basis)</td><td>11.5%</td><td>Below 11.5%</td></tr>
+        <tr><td>Moisture Content (maximum)</td><td>13.5%</td><td>Above 13.5%</td></tr>
+        <tr><td>Dockage (maximum)</td><td>1% (deductible from value)</td><td>Above 1%</td></tr>
+        <tr><td>Radioactivity (maximum, Cs-137)</td><td>50 Bq/Kg (relaxable for SAARC & South-East Asia crop)</td><td>Above 50 Bq/Kg (relaxable for SAARC & South-East Asia)</td></tr>
+      </tbody>
+    </table>
+    <div class="table-caption">Organoleptic requirement: bright, clear appearance, natural smell and color. Source: DGF Tender Notice, Package-03, Section 25.</div>
+  </div>
+
+  <div class="progress-item">
+    <div class="progress-header"><span class="label">Protein Content Margin vs. Minimum Requirement</span><span class="value">11.5% floor</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:77%"></div></div>
+  </div>
+  <div class="progress-item">
+    <div class="progress-header"><span class="label">Foreign Material Tolerance (Stricter Than Many Global Standards)</span><span class="value">0.7% ceiling</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:35%"></div></div>
+  </div>
+  <div class="progress-item">
+    <div class="progress-header"><span class="label">Moisture Tolerance</span><span class="value">13.5% ceiling</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div>
+  </div>
+</section>
+
+<!-- CHAPTER 6 -->
+<section class="chapter-section" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 06</div>
+    <h2 class="chapter-title">Logistics, Payment & Security Terms</h2>
+    <p class="chapter-desc">Commercial mechanics governing DGF wheat tenders — critical for structuring any competitive bid or back-to-back supply offer.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">Discharge Ports</div>
+      <div class="card-text">Chattogram (60% of volume) and Mongla (40% of volume), on CIF Liner Out terms. Cost of cargo, insurance, freight, stevedoring, overside handling, and lightering all sit on the seller's account.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Tender Security</div>
+      <div class="card-text">US$300,000 per bid — Bank Draft or Pay Order only. No Bank Guarantee accepted. Refundable for non-winners; forfeited on default.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Payment Mechanism</div>
+      <div class="card-text">Letter of Credit (L/C). Shipment must occur within 25 days of L/C opening — a tight window that rewards suppliers with pre-positioned or fast-moving origin stock.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Document & Eligibility Cost</div>
+      <div class="card-text">Tender document: Tk 5,000 or USD 100 (non-refundable). Eligibility requires complete, unconditional offers — no alternates.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 7 -->
+<section class="chapter-section" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 07</div>
+    <h2 class="chapter-title">Strategic Entry Pathways</h2>
+    <p class="chapter-desc">Three viable routes into the Bangladesh wheat market for a global exporter/trader sourcing from origin millers, ranked by speed and risk.</p>
+  </div>
+
+  <div class="rec-card">
+    <div class="rec-number">A</div>
+    <div class="rec-content">
+      <h4>Back-to-Back Supply to Agrocorp (Recommended Primary Path)</h4>
+      <p>Position as a reliable FOB supplier into Agrocorp's origination desk (Singapore/Canada/Australia-focused), leveraging origin miller relationships (Argentina, Brazil, US, Canada, Black Sea) and pricing below Agrocorp's landed benchmark of ~$298–322/MT. Target a 25,000–50,000 MT trial cargo to prove execution. Avoids direct tender risk, deposits, and blacklist exposure while using Agrocorp's established L/C structure (95/5 split) and DGF relationship.</p>
+      <span class="rec-priority priority-high">High Priority</span>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <div class="rec-number">B</div>
+    <div class="rec-content">
+      <h4>Private Channel — Direct to Major Millers (Recommended Parallel Path)</h4>
+      <p>Approach major private flour/feed millers directly — Meghna Group, Akij Insaf Group, TK Group, and BPICC members — who collectively handle the majority of total wheat/maize import volume outside DGF tenders. No tender security required; direct negotiation; matches bi-monthly scale sourcing models (e.g., 60,000 MT). Faster entry than the government channel.</p>
+      <span class="rec-priority priority-medium">Medium Priority — Run in Parallel</span>
+    </div>
+  </div>
+
+  <div class="rec-card">
+    <div class="rec-number">C</div>
+    <div class="rec-content">
+      <h4>Direct Tender Bidding (Higher Commitment, Longer Runway)</h4>
+      <p>Open to "bonafide traders" globally in principle, but requires a Bangladesh-registered agent or Import Registration Certificate (IRC) for full participation, plus a US$300,000 tender security per bid (bank draft/pay order only) and clean compliance against strict blacklist rules. Competing directly against an entrenched incumbent like Agrocorp raises execution and pricing risk. Relationship maintenance with the Director (Procurement) / CCGP is useful for status visibility but is not a guaranteed fast-track.</p>
+      <span class="rec-priority priority-low">Lower Priority — Longer-Term Option</span>
+    </div>
+  </div>
+
+  <div class="section-divider"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+
+  <div class="card">
+    <div class="card-title">Immediate Action Plan</div>
+    <div class="card-text">
+      1) Contact DGF Procurement Director Md. Moniruzzaman (dproc@dgfood.gov.bd, +88-02-41050178) for Package-03 execution confirmation and pipeline visibility.<br>
+      2) Prepare spec-compliant, competitively priced FOB offers from qualifying origins.<br>
+      3) Draft parallel introductions to Agrocorp's origination desk and to private millers (Meghna, Akij Insaf, TK Group, BPICC).<br>
+      4) Start with a trial cargo to establish clean execution history before scaling volume.<br>
+      5) Model freight and insurance costs to beat the $297–$322/MT landed benchmark.
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 8 -->
+<section class="chapter-section" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 08</div>
+    <h2 class="chapter-title">Risk Assessment</h2>
+    <p class="chapter-desc">Key risk factors across execution, compliance, and market-access dimensions.</p>
+  </div>
+
+  <div class="risk-matrix">
+    <div class="risk-cell risk-high">
+      <div class="risk-level">High Risk</div>
+      <ul>
+        <li>Missing the 25-day shipment window post-L/C opening</li>
+        <li>Bid-bond or Performance Guarantee forfeiture triggering multi-tender ban</li>
+        <li>Quality rejection on strict specs (esp. 0.7% foreign material ceiling)</li>
+      </ul>
+    </div>
+    <div class="risk-cell risk-medium">
+      <div class="risk-level">Medium Risk</div>
+      <ul>
+        <li>Direct tender competition against entrenched incumbent (Agrocorp)</li>
+        <li>Irregular, non-calendar tender cadence complicating supply planning</li>
+        <li>FX and freight volatility eroding margin against fixed CIF benchmarks</li>
+      </ul>
+    </div>
+    <div class="risk-cell risk-low">
+      <div class="risk-level">Low Risk</div>
+      <ul>
+        <li>Back-to-back FOB supply to an established, already-qualified awardee</li>
+        <li>Private-channel sales to major millers outside the tender process</li>
+        <li>Relationship-building follow-up with DGF Procurement Division</li>
+      </ul>
+    </div>
+    <div class="risk-cell risk-medium">
+      <div class="risk-level">Regulatory Watch</div>
+      <ul>
+        <li>Origin restriction: all countries eligible except Israel</li>
+        <li>Crop-year requirement: 2026 or latest</li>
+        <li>Blacklist rules apply per financial year, not per tender — track record compounds</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 9 -->
+<section class="chapter-section" id="ch9">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 09</div>
+    <h2 class="chapter-title">Pipeline & Forward Outlook</h2>
+    <p class="chapter-desc">What comes after Package-03, and how to monitor the next opportunity.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">Package-04 Status</div>
+      <div class="card-text">No confirmed Package-04 as of the latest available data. DGF issues tranches based on reserve stocks, price levels, and FX conditions rather than a fixed schedule.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Likely Next Window</div>
+      <div class="card-text">Late July–August 2026 for remaining FY2025-26 packages, or early FY2026-27 activity, given the surge in public wheat purchases across MY2025/26.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Monitoring Channels</div>
+      <div class="card-text">DGF website (dgfood.gov.bd), e-GP portal (eprocure.gov.bd), and press coverage of CCGP meetings via BSS, Ittefaq, Dhaka Tribune, and Business Standard.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Adjacent Opportunity — Maize</div>
+      <div class="card-text">Feed-driven maize demand shows stronger long-term growth and is less government-dominated than wheat, offering a better private-channel entry point.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 10 -->
+<section class="chapter-section" id="ch10">
+  <div class="chapter-header">
+    <div class="chapter-number">Chapter 10</div>
+    <h2 class="chapter-title">Appendix & Source File Inventory</h2>
+    <p class="chapter-desc">Source documents underlying this report.</p>
+  </div>
+
+  <div class="data-table-wrapper">
+    <div class="file-row">
+      <div class="file-icon">📘</div>
+      <div class="file-info"><div class="file-name">Bangladesh_Grain_Dossier_PartI-II.docx</div><div class="file-meta">Market & regulatory background</div></div>
+      <div class="file-status status-ready">Reviewed</div>
+    </div>
+    <div class="file-row">
+      <div class="file-icon">📘</div>
+      <div class="file-info"><div class="file-name">Bangladesh_Grain_Dossier_PartIII-VI.docx</div><div class="file-meta">Sector and trade-flow detail</div></div>
+      <div class="file-status status-ready">Reviewed</div>
+    </div>
+    <div class="file-row">
+      <div class="file-icon">📗</div>
+      <div class="file-info"><div class="file-name">Part_V_Tender_Intelligence_Package03_FY2025-26.docx</div><div class="file-meta">Package-03 tender intelligence</div></div>
+      <div class="file-status status-ready">Reviewed</div>
+    </div>
+    <div class="file-row">
+      <div class="file-icon">📙</div>
+      <div class="file-info"><div class="file-name">Part_VII_Agrocorp_Exporter_Intelligence.docx</div><div class="file-meta">Agrocorp company profile & positioning</div></div>
+      <div class="file-status status-ready">Reviewed</div>
+    </div>
+    <div class="file-row">
+      <div class="file-icon">📕</div>
+      <div class="file-info"><div class="file-name">DGF International Tender Notice (PDF) — Package-03</div><div class="file-meta">Official source document, Ref. 13.01.0000.093.46.018.26-361</div></div>
+      <div class="file-status status-ready">Reviewed</div>
+    </div>
+    <div class="file-row">
+      <div class="file-icon">📊</div>
+      <div class="file-info"><div class="file-name">Shahbani_Holdings_Wheat_Financial_Model_Jul2026.xlsx</div><div class="file-meta">Internal financial model</div></div>
+      <div class="file-status status-pending">Referenced</div>
+    </div>
+    <div class="file-row">
+      <div class="file-icon">📝</div>
+      <div class="file-info"><div class="file-name">Bangladesh_Wheat_Tender_Strategy_Update_1.txt</div><div class="file-meta">Prior strategy memo and action plan</div></div>
+      <div class="file-status status-ready">Reviewed</div>
+    </div>
+  </div>
+</section>
+
+<div class="report-footer">
+  <div class="logo-text">SHAHBANI HOLDINGS</div>
+  <p>This report is compiled from publicly issued Directorate General of Food tender notices and internal dossier materials for strategic planning purposes only.<br>It does not constitute a bid, offer, or binding commercial commitment.</p>
+  <div class="confidential">Confidential — Internal Use Only</div>
+</div>
+
+<script>
+  (function () {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.nav-btn'));
+    var sections = buttons.map(function (btn) {
+      return document.getElementById(btn.getAttribute('data-target'));
+    });
+
+    function scrollToSection(el) {
+      if (!el) return;
+      var navBar = document.querySelector('.nav-bar');
+      var offset = navBar ? navBar.offsetHeight + 12 : 0;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        scrollToSection(document.getElementById(btn.getAttribute('data-target')));
+      });
+    });
+
+    var brand = document.getElementById('navBrand');
+    if (brand) {
+      brand.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    var scrollHint = document.querySelector('.scroll-hint');
+    if (scrollHint) {
+      scrollHint.style.cursor = 'pointer';
+      scrollHint.addEventListener('click', function () {
+        scrollToSection(sections[0]);
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var idx = sections.indexOf(entry.target);
+            if (idx > -1) {
+              buttons.forEach(function (b) { b.classList.remove('active'); });
+              buttons[idx].classList.add('active');
+            }
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+      sections.forEach(function (sec) {
+        if (sec) observer.observe(sec);
+      });
+    }
+  })();
+</script>
+</body>
+</html>
